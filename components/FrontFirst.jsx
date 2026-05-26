@@ -15,7 +15,7 @@ import deloittePDF from '../src/assets/deloitte.pdf'
 /* ========================= */
 import project1 from '../src/assets/project1.jpg'
 import project2 from '../src/assets/project2.jpg'
-import project3 from '../src/assets/project3.jpg'
+import project3 from '../src/assets/project3.png'
 
 function FrontFirst() {
   // 1. Single source of truth for the active section
