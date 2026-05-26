@@ -1,0 +1,81 @@
+.frontSecond{
+
+  width: 50%;
+
+  height: 100vh;
+
+  position: fixed;
+
+  top: 0;
+
+  right: 0;
+
+  display: flex;
+
+  justify-content: center;
+
+  align-items: center;
+
+  overflow: hidden;
+
+  z-index: 5;
+
+}
+
+/* ========================= */
+
+/* HERO IMAGE */
+
+/* ========================= */
+
+.hero-image{
+
+  width: min(52vw, 920px);
+
+  height: auto;
+
+  transform:
+
+    translate(2%, 25px);
+
+  filter:
+
+    drop-shadow(
+
+      0 0 30px rgba(95,251,241,0.18)
+
+    )
+
+    drop-shadow(
+
+      0 0 80px rgba(90,140,255,0.12)
+
+    );
+
+}
+
+/* ========================= */
+
+/* RESPONSIVE */
+
+/* ========================= */
+
+@media(max-width: 992px){
+
+  .frontSecond{
+
+    position: relative;
+
+    width: 100%;
+
+    height: auto;
+
+  }
+
+  .hero-image{
+
+    width: min(90vw, 700px);
+
+  }
+
+}

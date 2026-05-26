@@ -1,0 +1,131 @@
+/* ========================= */
+/* HIDE DEFAULT CURSOR */
+/* ========================= */
+
+html,
+body,
+button,
+a,
+li,
+input,
+textarea{
+
+  cursor: none !important;
+}
+
+/* ========================= */
+/* MAIN CURSOR DOT */
+/* ========================= */
+
+.magic-dot{
+
+  position: fixed;
+
+  top: 0;
+  left: 0;
+
+  width: 6px;
+  height: 6px;
+
+  border-radius: 50%;
+
+  pointer-events: none;
+
+  z-index: 999999;
+
+  background: #ffffff;
+
+  box-shadow:
+
+    0 0 8px rgba(255,255,255,1),
+
+    0 0 20px rgba(95,251,241,0.9),
+
+    0 0 45px rgba(90,140,255,0.55);
+
+  will-change:
+    transform;
+}
+
+/* ========================= */
+/* SNOW PARTICLES */
+/* ========================= */
+
+.snow-particle{
+
+  position: fixed;
+
+  top: 0;
+  left: 0;
+
+  border-radius: 50%;
+
+  pointer-events: none;
+
+  z-index: 999997;
+
+  background:
+
+    radial-gradient(
+      circle,
+
+      rgba(255,255,255,1) 0%,
+
+      rgba(95,251,241,0.9) 45%,
+
+      transparent 80%
+    );
+
+  filter:
+    blur(0.5px);
+
+  animation:
+    snowFloat linear forwards;
+
+  will-change:
+    transform,
+    opacity;
+}
+
+/* ========================= */
+/* PARTICLE ANIMATION */
+/* ========================= */
+
+@keyframes snowFloat{
+
+  0%{
+
+    opacity: 1;
+
+    transform:
+
+      translate3d(0px, 0px, 0px)
+
+      scale(1);
+  }
+
+  25%{
+
+    opacity: 0.9;
+  }
+
+  50%{
+
+    opacity: 0.65;
+  }
+
+  100%{
+
+    opacity: 0;
+
+    transform:
+
+      translate3d(
+        var(--offsetX),
+        80px,
+        0px
+      )
+
+      scale(0);
+  }
+}

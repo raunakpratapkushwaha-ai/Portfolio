@@ -1,0 +1,935 @@
+/* ========================= */
+/* FRONT FIRST */
+/* ========================= */
+
+.frontFirst{
+
+  width: 50%;
+
+  height: 100vh;
+
+  overflow-y: auto;
+
+  scrollbar-width: none;
+
+  position: relative;
+
+  z-index: 10;
+
+  padding-bottom: 1rem;
+
+}
+
+.frontFirst::-webkit-scrollbar{
+
+  display: none;
+}
+
+/* ========================= */
+/* HERO */
+/* ========================= */
+.heroContent{
+
+  position: sticky;
+
+  top: 30vh;
+
+  width: 78%;
+
+  margin-left: 8rem;
+
+  z-index: 5;
+
+  transition:
+
+    opacity 0.9s ease,
+
+    transform 0.9s ease,
+
+    filter 0.9s ease;
+
+}
+
+.heroHidden{
+
+  opacity: 0;
+
+  transform:
+    translateY(-120px);
+
+  filter:
+    blur(10px);
+
+  pointer-events: none;
+}
+
+/* ========================= */
+/* HERO TOP */
+/* ========================= */
+
+.frontFirstTop{
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 18px;
+
+  flex-wrap: wrap;
+}
+
+/* ========================= */
+/* HERO TEXT */
+/* ========================= */
+
+.drown{
+
+  font-size: 5rem;
+
+  font-weight: 700;
+
+  line-height: 1.05;
+
+  color: white;
+}
+
+.name{
+
+  font-size: 5rem;
+
+  font-weight: 800;
+
+  line-height: 1.05;
+}
+
+/* ========================= */
+/* GRADIENT */
+/* ========================= */
+
+.gradient-text{
+
+  background:
+
+    linear-gradient(
+      135deg,
+      #ffffff 0%,
+      var(--primary) 35%,
+      var(--secondary) 70%,
+      #7defff 100%
+    );
+
+  -webkit-background-clip: text;
+
+  -webkit-text-fill-color: transparent;
+
+  background-clip: text;
+
+  color: transparent;
+}
+
+/* ========================= */
+/* ROLE */
+/* ========================= */
+
+.role{
+
+  margin-top: 20px;
+
+  font-size: 2rem;
+
+  font-weight: 500;
+
+  color: var(--text-muted);
+}
+
+/* ========================= */
+/* DESCRIPTION */
+/* ========================= */
+
+.description{
+
+  width: 85%;
+
+  margin-top: 28px;
+
+  font-size: 1.08rem;
+
+  line-height: 1.9;
+
+  color:
+    rgba(255,255,255,0.66);
+}
+
+/* ========================= */
+/* COMMON SECTION */
+/* ========================= */
+
+.educationWrapper,
+.projectsWrapper,
+.contactWrapper{
+width: 78%;
+
+  margin-left: 8rem;
+
+  margin-top: 90vh;
+
+  opacity: 0;
+
+  transform:
+
+    translateY(120px);
+
+  filter:
+
+    blur(10px);
+
+  transition:
+
+    opacity 1s ease,
+
+    transform 1s ease,
+
+    filter 1s ease;
+
+}
+/* ========================= */
+/* SECTION VISIBLE */
+/* ========================= */
+
+.educationVisible,
+.projectsVisible,
+.contactVisible{
+
+   opacity: 1;
+
+  transform:
+
+    translateY(0px);
+
+  filter:
+
+    blur(0px);
+}
+
+/* ========================= */
+/* EDUCATION */
+/* ========================= */
+
+.educationWrapper{
+
+  margin-top: 80vh;
+}
+
+/* ========================= */
+/* PROJECTS */
+/* ========================= */
+
+.projectsWrapper{
+
+  margin-top: 70vh;
+}
+
+/* ========================= */
+/* CONTACT */
+/* ========================= */
+
+.contactWrapper{
+
+  margin-top: 70vh;
+
+  margin-bottom: 10rem;
+}
+
+/* ========================= */
+/* HEADINGS */
+/* ========================= */
+
+.educationHeading,
+.projectsHeading,
+.contactHeading{
+
+  font-size: 2.3rem;
+
+  font-weight: 700;
+
+  margin-bottom: 2rem;
+
+  color: white;
+}
+
+/* ========================= */
+/* SUBHEADING */
+/* ========================= */
+
+.educationSubHeading{
+
+  margin-top: 5rem;
+
+  margin-bottom: 2rem;
+
+  font-size: 1.8rem;
+
+  font-weight: 700;
+
+  color: white;
+}
+
+/* ========================= */
+/* COMMON CARDS */
+/* ========================= */
+
+.educationCard,
+.certificationCard,
+.projectCard,
+.contactCard{
+
+  width: 100%;
+
+  padding: 2rem;
+
+  margin-bottom: 2rem;
+
+  border-radius: 28px;
+
+  background:
+
+    linear-gradient(
+      135deg,
+      rgba(255,255,255,0.06),
+      rgba(255,255,255,0.03)
+    );
+
+  border:
+    1px solid rgba(95,251,241,0.14);
+
+  backdrop-filter: blur(18px);
+
+  box-shadow:
+    0 0 30px rgba(95,251,241,0.04);
+
+  transition:
+
+    transform 0.4s ease,
+
+    border 0.4s ease,
+
+    box-shadow 0.4s ease;
+}
+
+/* ========================= */
+/* HOVER */
+/* ========================= */
+
+.educationCard:hover,
+.certificationCard:hover,
+.projectCard:hover,
+.contactCard:hover{
+
+  transform:
+    translateY(-6px);
+
+  border:
+    1px solid rgba(95,251,241,0.28);
+
+  box-shadow:
+    0 0 50px rgba(95,251,241,0.08);
+}
+
+/* ========================= */
+/* TOP */
+/* ========================= */
+
+.educationTop,
+.certificationTop,
+.projectTop{
+
+  display: flex;
+
+  justify-content: space-between;
+
+  align-items: center;
+
+  gap: 20px;
+}
+
+/* ========================= */
+/* CONTENT */
+/* ========================= */
+
+.certificationContent,
+.projectContent{
+
+  display: flex;
+
+  justify-content: space-between;
+
+  align-items: center;
+
+  gap: 2rem;
+}
+
+.certificationLeft,
+.projectLeft{
+
+  flex: 1;
+}
+
+/* ========================= */
+/* TITLES */
+/* ========================= */
+
+.educationDegree,
+.certificationTitle,
+.projectTitle{
+
+  font-size: 1.35rem;
+
+  font-weight: 700;
+
+  color: white;
+}
+
+/* ========================= */
+/* ACCENT */
+/* ========================= */
+
+.educationYear,
+.certificationProvider,
+.projectTech{
+
+  color: var(--primary);
+
+  font-weight: 600;
+}
+
+/* ========================= */
+/* DESCRIPTIONS */
+/* ========================= */
+
+.educationCollege,
+.educationDescription,
+.certificationDescription,
+.projectDescription{
+
+  margin-top: 18px;
+
+  line-height: 1.85;
+
+  color:
+    rgba(255,255,255,0.64);
+}
+
+/* ========================= */
+/* PDF & PROJECT */
+/* ========================= */
+
+.pdfPreviewWrapper,
+.projectThumbnailWrapper{
+
+  position: relative;
+
+  width: 220px;
+
+  min-width: 220px;
+
+  height: 140px;
+
+  overflow: hidden;
+
+  border-radius: 18px;
+
+  cursor: pointer;
+
+  border:
+    1px solid rgba(255,255,255,0.08);
+
+  transition:
+    transform 0.35s ease;
+}
+
+.pdfPreviewWrapper:hover,
+.projectThumbnailWrapper:hover{
+
+  transform:
+    scale(1.03);
+}
+
+/* ========================= */
+/* PDF */
+/* ========================= */
+
+.pdfPreview,
+.projectThumbnail{
+
+  width: 100%;
+
+  height: 100%;
+
+  object-fit: cover;
+
+  border: none;
+}
+
+/* ========================= */
+/* OVERLAY */
+/* ========================= */
+
+.pdfOverlay,
+.projectOverlay{
+
+  position: absolute;
+
+  inset: 0;
+
+  background:
+    rgba(0,0,0,0.55);
+
+  display: flex;
+
+  flex-direction: column;
+
+  justify-content: center;
+
+  align-items: center;
+
+  gap: 10px;
+
+  color: white;
+
+  opacity: 0;
+
+  transition:
+    opacity 0.35s ease;
+}
+
+.pdfPreviewWrapper:hover .pdfOverlay,
+.projectThumbnailWrapper:hover .projectOverlay{
+
+  opacity: 1;
+}
+
+/* ========================= */
+/* CONTACT */
+/* ========================= */
+
+.contactCard{
+
+  position: relative;
+
+  overflow: hidden;
+
+  padding: 4rem 3rem;
+}
+
+/* ========================= */
+/* CONTACT GLOW */
+/* ========================= */
+
+.contactGlow{
+
+  position: absolute;
+
+  width: 420px;
+
+  height: 420px;
+
+  border-radius: 50%;
+
+  top: -140px;
+
+  right: -140px;
+
+  background:
+
+    radial-gradient(
+      circle,
+      rgba(95,251,241,0.16),
+      transparent 70%
+    );
+
+  filter:
+    blur(90px);
+
+  pointer-events: none;
+}
+
+/* ========================= */
+/* CONTACT TITLE */
+/* ========================= */
+
+.contactTitle{
+
+  position: relative;
+
+  font-size: 2rem;
+
+  font-weight: 700;
+
+  color: white;
+
+  z-index: 2;
+}
+
+/* ========================= */
+/* CONTACT DESCRIPTION */
+/* ========================= */
+
+.contactDescription{
+
+  position: relative;
+
+  width: 80%;
+
+  margin-top: 1.5rem;
+
+  line-height: 1.9;
+
+  color:
+    rgba(255,255,255,0.66);
+
+  z-index: 2;
+}
+
+/* ========================= */
+/* FORM */
+/* ========================= */
+
+.contactForm{
+
+  position: relative;
+
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 1.5rem;
+
+  margin-top: 3rem;
+
+  z-index: 2;
+}
+
+/* ========================= */
+/* INPUT */
+/* ========================= */
+
+.contactInput,
+.contactTextarea{
+
+  width: 100%;
+
+  border: none;
+
+  outline: none;
+
+  border-radius: 18px;
+
+  padding: 18px 22px;
+
+  font-size: 1rem;
+
+  color: white;
+
+  background:
+    rgba(255,255,255,0.05);
+
+  border:
+    1px solid rgba(255,255,255,0.08);
+
+  transition:
+    border 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+/* ========================= */
+/* TEXTAREA */
+/* ========================= */
+
+.contactTextarea{
+
+  min-height: 180px;
+
+  resize: none;
+}
+
+/* ========================= */
+/* FOCUS */
+/* ========================= */
+
+.contactInput:focus,
+.contactTextarea:focus{
+
+  border:
+    1px solid rgba(95,251,241,0.35);
+
+  box-shadow:
+    0 0 20px rgba(95,251,241,0.1);
+}
+
+/* ========================= */
+/* PLACEHOLDER */
+/* ========================= */
+
+.contactInput::placeholder,
+.contactTextarea::placeholder{
+
+  color:
+    rgba(255,255,255,0.42);
+}
+
+/* ========================= */
+/* BUTTON */
+/* ========================= */
+
+.contactButton{
+
+  width: fit-content;
+
+  align-self: center;
+
+  padding: 16px 30px;
+
+  border: none;
+
+  border-radius: 18px;
+
+  cursor: pointer;
+
+  color: white;
+
+  font-size: 1rem;
+
+  font-weight: 600;
+
+  background:
+
+    linear-gradient(
+      135deg,
+      rgba(95,251,241,0.24),
+      rgba(90,140,255,0.24)
+    );
+
+  border:
+    1px solid rgba(95,251,241,0.24);
+
+  transition:
+    transform 0.35s ease,
+    box-shadow 0.35s ease;
+}
+
+.contactButton:hover{
+
+  transform:
+    translateY(-4px);
+
+  box-shadow:
+    0 0 35px rgba(95,251,241,0.18);
+}
+
+/* ========================= */
+/* MODAL */
+/* ========================= */
+
+.pdfModal{
+
+  position: fixed;
+
+  inset: 0;
+
+  background:
+    rgba(0,0,0,0.85);
+
+  backdrop-filter: blur(12px);
+
+  display: flex;
+
+  justify-content: center;
+
+  align-items: center;
+
+  z-index: 99999;
+}
+
+.pdfModalContent{
+
+  width: 85vw;
+
+  height: 90vh;
+
+  overflow: hidden;
+
+  border-radius: 24px;
+}
+
+.pdfViewer{
+
+  width: 100%;
+
+  height: 100%;
+
+  border: none;
+
+  background: white;
+}
+
+/* ========================= */
+/* RESPONSIVE */
+/* ========================= */
+
+@media(max-width: 1400px){
+
+  .heroContent,
+  .educationWrapper,
+  .projectsWrapper,
+  .contactWrapper{
+
+    margin-left: 5rem;
+  }
+
+  .drown,
+  .name{
+
+    font-size: 4.5rem;
+  }
+}
+
+@media(max-width: 1200px){
+
+  .drown,
+  .name{
+
+    font-size: 4rem;
+  }
+
+  .role{
+
+    font-size: 1.7rem;
+  }
+}
+
+@media(max-width: 992px){
+
+  .frontFirst{
+
+    width: 100%;
+
+    height: auto;
+
+    overflow: visible;
+  }
+
+  .heroContent{
+
+    position: relative;
+
+    top: auto;
+
+    width: 90%;
+
+    margin: auto;
+
+    padding-top: 6rem;
+  }
+
+  .heroHidden{
+
+    opacity: 1;
+
+    transform: none;
+
+    filter: none;
+  }
+
+  .educationWrapper,
+  .projectsWrapper,
+  .contactWrapper{
+
+    width: 90%;
+
+    margin:
+      6rem auto 0 auto;
+
+    opacity: 1;
+
+    transform: none;
+
+    filter: none;
+  }
+
+  .certificationContent,
+  .projectContent{
+
+    flex-direction: column;
+  }
+
+  .pdfPreviewWrapper,
+  .projectThumbnailWrapper{
+
+    width: 100%;
+
+    height: 220px;
+  }
+}
+
+@media(max-width: 600px){
+
+  .drown,
+  .name{
+
+    font-size: 3rem;
+  }
+
+  .role{
+
+    font-size: 1.3rem;
+  }
+
+  .description,
+  .contactDescription{
+
+    width: 100%;
+  }
+
+  .educationHeading,
+  .projectsHeading,
+  .contactHeading{
+
+    font-size: 1.8rem;
+  }
+
+  .educationSubHeading{
+
+    font-size: 1.5rem;
+  }
+
+  .certificationTitle,
+  .projectTitle{
+
+    font-size: 1.1rem;
+  }
+
+  .educationTop,
+  .certificationTop,
+  .projectTop{
+
+    flex-direction: column;
+
+    align-items: flex-start;
+  }
+
+  .contactCard{
+
+    padding: 3rem 1.5rem;
+  }
+}
+
+/* ========================= */
+/* SECTION HIDDEN EFFECT */
+/* ========================= */
+
+.sectionHidden {
+  opacity: 0 !important;
+  transform: translateY(-120px) !important;
+  filter: blur(10px) !important;
+  pointer-events: none;
+}

@@ -1,0 +1,462 @@
+/* ========================= */
+/* GLOBAL */
+/* ========================= */
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+:root{
+
+  --primary: #5ffbf1;
+  --secondary: #5a8cff;
+
+  --text: #ffffff;
+
+  --text-muted:
+    rgba(255,255,255,0.72);
+
+  --bg-dark: #070b14;
+}
+
+html,
+body{
+
+  width: 100%;
+
+  overflow-x: hidden;
+}
+
+body{
+
+  font-family: 'Poppins', sans-serif;
+
+  color: var(--text);
+
+  min-height: 100vh;
+
+  background:
+
+    radial-gradient(
+      circle at 20% 20%,
+      rgba(0,183,255,0.18) 0%,
+      transparent 25%
+    ),
+
+    radial-gradient(
+      circle at 80% 30%,
+      rgba(0,119,255,0.15) 0%,
+      transparent 30%
+    ),
+
+    radial-gradient(
+      circle at 50% 80%,
+      rgba(0,225,255,0.08) 0%,
+      transparent 35%
+    ),
+
+    linear-gradient(
+      135deg,
+      #040816 0%,
+      #07142b 45%,
+      #050816 100%
+    );
+
+  background-repeat: no-repeat;
+
+  background-attachment: fixed;
+
+  position: relative;
+}
+
+/* ========================= */
+/* ROOT */
+/* ========================= */
+
+#root{
+
+  position: relative;
+
+  min-height: 100vh;
+
+  isolation: isolate;
+}
+
+/* ========================= */
+/* GLOBAL BG GLOW */
+/* ========================= */
+
+body::before{
+
+  content: '';
+
+  position: fixed;
+
+  top: -20%;
+  right: -10%;
+
+  width: 700px;
+  height: 700px;
+
+  border-radius: 50%;
+
+  background:
+    radial-gradient(
+      circle,
+      rgba(95,251,241,0.08),
+      transparent 70%
+    );
+
+  filter: blur(90px);
+
+  pointer-events: none;
+
+  z-index: -1;
+}
+
+body::after{
+
+  content: '';
+
+  position: fixed;
+
+  bottom: -20%;
+  left: -10%;
+
+  width: 700px;
+  height: 700px;
+
+  border-radius: 50%;
+
+  background:
+    radial-gradient(
+      circle,
+      rgba(90,140,255,0.08),
+      transparent 70%
+    );
+
+  filter: blur(90px);
+
+  pointer-events: none;
+
+  z-index: -1;
+}
+
+/* ========================= */
+/* NAVBAR */
+/* ========================= */
+
+.navBar{
+
+  width: calc(100% - 2rem);
+
+  margin-inline: 1rem;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  position: fixed;
+
+  top: 0;
+  left: 0;
+
+  padding-top: 1rem;
+
+  z-index: 100;
+}
+
+.logo{
+
+  display: flex;
+  align-items: center;
+
+  font-size: 3rem;
+  font-weight: 800;
+
+  color: white;
+}
+
+.logo img{
+
+  height: 60px;
+
+  width: auto;
+
+  margin-right: 10px;
+}
+
+.white{
+  color: var(--primary);
+}
+
+/* ========================= */
+/* NAV LINKS */
+/* ========================= */
+
+.linksDiv{
+
+  width: 750px;
+
+  display: flex;
+  align-items: center;
+}
+
+.linksDiv ul{
+
+  width: 100%;
+
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+
+  list-style: none;
+}
+
+.linksDiv ul li{
+
+  color: rgba(255,255,255,0.8);
+
+  font-size: 1rem;
+  font-weight: 500;
+
+  transition:
+    color 0.3s ease,
+    transform 0.3s ease;
+}
+
+.linksDiv ul li:hover{
+
+  color: var(--primary);
+
+  transform: translateY(-2px);
+}
+
+/* ========================= */
+/* RESUME BUTTON */
+/* ========================= */
+
+.resumeButton {
+  position: relative;
+  display: flex;
+  align-items: center;
+  padding: 12px 24px; /* Slightly wider for a better click target */
+  border-radius: 12px;
+  
+  /* Slightly more visible default border */
+  border: 1px solid rgba(95, 251, 241, 0.3);
+  
+  background: linear-gradient(
+    135deg,
+    rgba(95, 251, 241, 0.12),
+    rgba(90, 140, 255, 0.12)
+  );
+  
+  backdrop-filter: blur(12px);
+  color: white;
+  font-size: 1.05rem;
+  font-weight: 600; /* Bolder text for readability */
+  cursor: pointer; /* Crucial for clickability */
+  overflow: hidden; /* Contains the shimmer effect */
+  
+  /* Bouncy, premium transition curve */
+  transition: 
+    transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275), 
+    box-shadow 0.3s ease, 
+    border-color 0.3s ease,
+    background 0.3s ease;
+    
+  /* Soft persistent ambient glow */
+  box-shadow: 0 0 15px rgba(95, 251, 241, 0.08);
+}
+
+/* ========================= */
+/* CONTINUOUS SHIMMER EFFECT */
+/* ========================= */
+
+.resumeButton::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 50%;
+  height: 100%;
+  
+  /* The bright reflection line */
+  background: linear-gradient(
+    to right,
+    transparent,
+    rgba(255, 255, 255, 0.25),
+    transparent
+  );
+  
+  transform: skewX(-20deg);
+  animation: shimmer 4s infinite; /* Loops every 4 seconds */
+}
+
+@keyframes shimmer {
+  0% { left: -100%; }
+  20% { left: 200%; } /* Moves across fast */
+  100% { left: 200%; } /* Waits before repeating */
+}
+
+/* ========================= */
+/* HOVER STATE */
+/* ========================= */
+
+.resumeButton:hover {
+  transform: translateY(-4px) scale(1.02);
+  border-color: rgba(95, 251, 241, 0.8);
+  
+  background: linear-gradient(
+    135deg,
+    rgba(95, 251, 241, 0.2),
+    rgba(90, 140, 255, 0.2)
+  );
+  
+  /* Layered glowing shadows for a neon pop */
+  box-shadow:
+    0 10px 20px rgba(0, 0, 0, 0.2),
+    0 0 20px rgba(95, 251, 241, 0.4),
+    0 0 45px rgba(90, 140, 255, 0.2);
+}
+
+/* ========================= */
+/* ACTIVE / CLICK STATE */
+/* ========================= */
+
+.resumeButton:active {
+  transform: translateY(1px) scale(0.98);
+  box-shadow: 0 0 10px rgba(95, 251, 241, 0.2);
+}
+
+/* ========================= */
+/* ICON ANIMATION */
+/* ========================= */
+
+.resumeButton img {
+  width: 20px;
+  height: 20px;
+  margin-right: 10px;
+  transition: transform 0.3s ease;
+  
+  /* This forces the image to pure white */
+  filter: brightness(0) invert(1); 
+}
+
+/* Nudges the download arrow down when hovered */
+.resumeButton:hover img {
+  transform: translateY(2px);
+}
+
+/* ========================= */
+/* HERO SECTION */
+/* ========================= */
+
+.section{
+
+  width: 100%;
+
+  height: 100vh;
+
+  display: flex;
+
+  position: relative;
+
+  overflow: hidden;
+
+  padding-top: 80px;
+
+  z-index: 2;
+
+}
+
+/* ========================= */
+/* SECTION GLOW */
+/* ========================= */
+
+.section::before{
+
+  content: '';
+
+  position: absolute;
+
+  top: -10%;
+  right: -6%;
+
+  width: 600px;
+  height: 600px;
+
+  border-radius: 50%;
+
+  background:
+    radial-gradient(
+      circle,
+      rgba(95,251,241,0.12),
+      transparent 70%
+    );
+
+  filter: blur(90px);
+
+  z-index: 0;
+}
+
+.section::after{
+
+  content: '';
+
+  position: absolute;
+
+  bottom: -18%;
+  left: -8%;
+
+  width: 600px;
+  height: 600px;
+
+  border-radius: 50%;
+
+  background:
+    radial-gradient(
+      circle,
+      rgba(90,140,255,0.12),
+      transparent 70%
+    );
+
+  filter: blur(90px);
+
+  z-index: 0;
+}
+
+/* ========================= */
+/* RESPONSIVE */
+/* ========================= */
+
+@media(max-width: 992px){
+
+  .section{
+
+    flex-direction: column;
+
+    justify-content: center;
+
+    padding-top: 120px;
+  }
+
+  .linksDiv{
+    display: none;
+  }
+}
+
+@media(max-width: 600px){
+
+  .logo{
+    font-size: 2rem;
+  }
+
+  .logo img{
+    height: 45px;
+  }
+}

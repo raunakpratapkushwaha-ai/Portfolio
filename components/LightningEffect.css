@@ -1,0 +1,312 @@
+/* ========================= */
+/* LIGHTNING WRAPPER */
+/* ========================= */
+
+.lightning-bg{
+  position: fixed;
+
+  inset: 0;
+
+  width: 100%;
+  height: 100%;
+
+  overflow: hidden;
+
+  pointer-events: none;
+
+  z-index: 0;
+
+  mix-blend-mode: screen;
+
+  opacity: 0.95;
+}
+
+/* ========================= */
+/* SVG CANVAS */
+/* ========================= */
+
+.natural-lightning-canvas{
+  position: absolute;
+
+  inset: 0;
+
+  width: 100%;
+  height: 100%;
+
+  overflow: visible;
+}
+
+/* ========================= */
+/* GLOBAL STRIKE */
+/* ========================= */
+
+.natural-lightning{
+  opacity: 0;
+
+  animation:
+    natural-lightning-flicker
+    var(--strike-duration)
+    ease-out
+    forwards;
+}
+
+/* ========================= */
+/* CLOUD FLASH */
+/* ========================= */
+
+.natural-cloud-flash,
+.natural-ground-flash{
+  fill: rgba(255,255,255,0.22);
+
+  filter:
+    blur(22px)
+    drop-shadow(0 0 44px rgba(80,226,255,0.52));
+
+  opacity: 0;
+
+  animation:
+    natural-cloud-pulse
+    var(--strike-duration)
+    ease-out
+    forwards;
+}
+
+.natural-ground-flash{
+  fill: rgba(80,224,255,0.18);
+
+  filter:
+    blur(28px)
+    drop-shadow(0 0 60px rgba(25,211,255,0.36));
+}
+
+/* ========================= */
+/* MAIN LIGHTNING */
+/* ========================= */
+
+.natural-lightning-bloom,
+.natural-lightning-haze,
+.natural-lightning-channel,
+.natural-lightning-hotcore,
+.natural-branch-bloom,
+.natural-branch-core{
+  fill: none;
+
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+/* OUTER BLOOM */
+
+.natural-lightning-bloom{
+  stroke: rgba(43,203,255,0.28);
+
+  stroke-width:
+    calc(30px * var(--strike-intensity));
+
+  filter: blur(18px);
+}
+
+/* MID GLOW */
+
+.natural-lightning-haze{
+  stroke: rgba(145,245,255,0.4);
+
+  stroke-width:
+    calc(13px * var(--strike-intensity));
+
+  filter: blur(5px);
+}
+
+/* MAIN CHANNEL */
+
+.natural-lightning-channel{
+  stroke: rgba(135,247,255,0.92);
+
+  stroke-width:
+    calc(5.5px * var(--strike-intensity));
+
+  filter:
+    drop-shadow(0 0 7px rgba(255,255,255,0.92))
+    drop-shadow(0 0 24px rgba(80,230,255,0.92))
+    drop-shadow(0 0 72px rgba(0,174,226,0.5));
+}
+
+/* HOT CORE */
+
+.natural-lightning-hotcore{
+  stroke: rgba(255,255,255,1);
+
+  stroke-width:
+    calc(1.4px * var(--strike-intensity));
+}
+
+/* ========================= */
+/* BRANCHES */
+/* ========================= */
+
+.natural-branch-bloom{
+  stroke: rgba(86,222,255,0.22);
+
+  stroke-width: 12px;
+
+  filter: blur(9px);
+}
+
+.natural-branch-core{
+  stroke: rgba(225,250,255,0.92);
+
+  filter:
+    drop-shadow(0 0 5px rgba(255,255,255,0.58))
+    drop-shadow(0 0 14px rgba(85,222,255,0.7));
+}
+
+/* ========================= */
+/* SKY FLASH */
+/* ========================= */
+
+.sky-sheet-flash{
+  position: absolute;
+
+  top: var(--flash-y);
+  left: var(--flash-x);
+
+  width: var(--flash-size);
+  height: var(--flash-size);
+
+  border-radius: 50%;
+
+  background:
+    radial-gradient(
+      circle,
+      rgba(255,255,255,0.64),
+      transparent 14%
+    ),
+
+    radial-gradient(
+      circle,
+      rgba(98,232,255,0.2),
+      transparent 48%
+    ),
+
+    radial-gradient(
+      circle,
+      rgba(40,152,255,0.11),
+      transparent 68%
+    );
+
+  filter: blur(22px);
+
+  opacity: 0;
+
+  transform:
+    translate(-50%, -50%)
+    scale(0.7);
+
+  animation:
+    natural-sheet-flash
+    var(--flash-duration)
+    ease-out
+    forwards;
+}
+
+/* ========================= */
+/* ANIMATIONS */
+/* ========================= */
+
+@keyframes natural-lightning-flicker{
+
+  0%{
+    opacity: 0;
+  }
+
+  3%{
+    opacity: 1;
+  }
+
+  9%{
+    opacity: 0.12;
+  }
+
+  17%{
+    opacity: 0.95;
+  }
+
+  28%{
+    opacity: 0.28;
+  }
+
+  39%{
+    opacity: 1;
+  }
+
+  56%{
+    opacity: 0.42;
+  }
+
+  72%{
+    opacity: 0.76;
+  }
+
+  100%{
+    opacity: 0;
+  }
+}
+
+@keyframes natural-cloud-pulse{
+
+  0%{
+    opacity: 0;
+
+    transform: scale(0.72);
+  }
+
+  6%{
+    opacity: 0.86;
+  }
+
+  24%{
+    opacity: 0.22;
+  }
+
+  46%{
+    opacity: 0.48;
+  }
+
+  100%{
+    opacity: 0;
+
+    transform: scale(1.28);
+  }
+}
+
+@keyframes natural-sheet-flash{
+
+  0%{
+    opacity: 0;
+
+    transform:
+      translate(-50%, -50%)
+      scale(0.65);
+  }
+
+  7%{
+    opacity: var(--flash-opacity);
+  }
+
+  18%{
+    opacity: 0.12;
+  }
+
+  32%{
+    opacity:
+      calc(var(--flash-opacity) * 0.72);
+  }
+
+  100%{
+    opacity: 0;
+
+    transform:
+      translate(-50%, -50%)
+      scale(1.36);
+  }
+}
