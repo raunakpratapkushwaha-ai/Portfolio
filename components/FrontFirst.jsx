@@ -163,7 +163,7 @@ function FrontFirst() {
             </div>
           )
         }
-        
+
         <div className="frontFirstTop">
           <div className="drown">Hi, I'm</div>
           <div className="name gradient-text">Raunak</div>
@@ -273,13 +273,39 @@ function FrontFirst() {
           </div>
           <form
             className="contactForm"
-            action="https://mail.google.com/mail/?view=cm&fs=1&to=connecttoraunak1@gmail.com"
-            method="GET"
-            target="_blank"
+            onSubmit={(e) => {
+              e.preventDefault()
+              const subject =
+                e.target.subject.value
+              const message =
+                e.target.message.value
+              const gmailURL =
+                `https://mail.google.com/mail/?view=cm&fs=1&to=connecttoraunak1@gmail.com&su=${encodeURIComponent(subject)}&body=${encodeURIComponent(message)}`
+              window.open(gmailURL, '_blank')
+            }}
           >
-            <input type="text" name="su" placeholder="Subject" className="contactInput" required />
-            <textarea name="body" placeholder="Write your message here..." className="contactTextarea" required />
-            <button type="submit" className="contactButton">Send Mail</button>
+
+            <input
+              type="text"
+              name="subject"
+              placeholder="Subject"
+              className="contactInput"
+              required
+            />
+
+            <textarea
+              name="message"
+              placeholder="Write your message here..."
+              className="contactTextarea"
+              required
+            />
+            <button
+              type="submit"
+              className="contactButton"
+            >
+              Send Mail
+
+            </button>
           </form>
         </div>
       </div>
