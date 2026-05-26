@@ -1,5 +1,5 @@
 import { useEffect, useRef } from 'react'
-import './MagicCursor.css'
+import './css/MagicCursor.css'
 
 function MagicCursor() {
 

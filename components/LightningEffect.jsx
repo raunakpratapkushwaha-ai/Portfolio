@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react'
-import './LightningEffect.css'
+import './css/LightningEffect.css'
 
 const randomBetween = (min, max) => Math.random() * (max - min) + min
 

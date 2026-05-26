@@ -1,4 +1,4 @@
-import './FrontSecond.css'
+import './css/FrontSecond.css'
 import HeroImage from '../src/assets/heroImage.png'
 
 function FrontSecond() {
@@ -14,3 +14,5 @@ function FrontSecond() {
 }
 
 export default FrontSecond
+
+

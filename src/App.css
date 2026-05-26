@@ -360,7 +360,7 @@ body::after{
 
   width: 100%;
 
-  height: 100vh;
+  min-height: 100vh;
 
   display: flex;
 
@@ -438,12 +438,19 @@ body::after{
 
   .section{
 
-    flex-direction: column;
+  flex-direction: column;
 
-    justify-content: center;
+  justify-content: flex-start;
 
-    padding-top: 120px;
-  }
+  padding-top: 120px;
+
+  height: auto !important;
+
+  min-height: auto !important;
+
+  overflow: visible !important;
+
+}
 
   .linksDiv{
     display: none;

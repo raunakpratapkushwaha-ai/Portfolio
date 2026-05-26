@@ -1,6 +1,7 @@
 import { useEffect, useState, useRef } from 'react'
 import { FaExternalLinkAlt } from 'react-icons/fa'
-import './FrontFirst.css'
+import heroImage from '../src/assets/heroImage.png'
+import './css/FrontFirst.css'
 
 /* ========================= */
 /* PDFs */
@@ -59,17 +60,17 @@ function FrontFirst() {
       }
     }
 
-    // Listen to both the container (desktop) and the window (mobile)
-    if (frontFirst) frontFirst.addEventListener('scroll', handleScroll)
-    window.addEventListener('scroll', handleScroll)
+    const isMobile = window.innerWidth <= 992
+    // Desktop only scroll tracking
+    if (!isMobile && frontFirst) {
+      frontFirst.addEventListener('scroll', handleScroll)
+      handleScroll()
+    }
 
-    // Run once on load to catch the initial state
-    handleScroll()
-
-    // Cleanup listeners on unmount
     return () => {
-      if (frontFirst) frontFirst.removeEventListener('scroll', handleScroll)
-      window.removeEventListener('scroll', handleScroll)
+      if (!isMobile && frontFirst) {
+        frontFirst.removeEventListener('scroll', handleScroll)
+      }
     }
     
   }, [])
@@ -78,6 +79,7 @@ function FrontFirst() {
   /* DERIVED VISIBILITY STATES */
   /* ========================= */
   // Translating the active section into the booleans your CSS expects
+
   const showEducation = activeSection === 'education' || activeSection === 'projects' || activeSection === 'contact'
   const showProjects = activeSection === 'projects' || activeSection === 'contact'
   const showContact = activeSection === 'contact'
@@ -150,6 +152,18 @@ function FrontFirst() {
         ref={homeRef}
         className={`heroContent ${showEducation ? 'heroHidden' : ''}`}
       >
+        {
+          window.innerWidth <= 992 && (
+            <div className="mobileHeroImageWrapper">
+              <img
+                src={heroImage}
+                alt="Hero"
+                className="mobileHeroImage"
+              />
+            </div>
+          )
+        }
+        
         <div className="frontFirstTop">
           <div className="drown">Hi, I'm</div>
           <div className="name gradient-text">Raunak</div>
