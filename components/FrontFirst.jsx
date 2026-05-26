@@ -117,25 +117,25 @@ function FrontFirst() {
   /* ========================= */
   const projects = [
     {
-      title: 'AI Portfolio Website',
-      tech: 'React • CSS • JS',
+      title: 'Portfolio Website',
+      tech: 'React JS',
       description: 'Futuristic animated portfolio with cinematic effects and immersive UI.',
       image: project1,
-      github: 'https://github.com/YOUR_USERNAME'
+      github: 'https://github.com/raunakpratapkushwaha-ai/Portfolio'
     },
     {
-      title: 'AI Chatbot Interface',
-      tech: 'React • AI',
-      description: 'Modern chatbot UI with dynamic animations and responsive interactions.',
+      title: 'Optical Encryption Model',
+      tech: 'Pytorch•Autograd',
+      description: 'A mordern encryption model that uses optical techniques to secure data transmission.',
       image: project2,
-      github: 'https://github.com/YOUR_USERNAME'
+      github: 'https://github.com/raunakpratapkushwaha-ai'
     },
     {
-      title: 'React Counter App',
-      tech: 'React JS',
-      description: 'Interactive React project using hooks, state management and reusable components.',
+      title: 'Expense Tracker App',
+      tech: 'React•Matplotlib•Pandas',
+      description: 'A full stack expense tracker with interactive visualizations to manage your finances effectively.',
       image: project3,
-      github: 'https://github.com/YOUR_USERNAME'
+      github: 'https://the-expense-trackerr.web.app/'
     }
   ]
 
