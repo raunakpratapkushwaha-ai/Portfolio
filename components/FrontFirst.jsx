@@ -176,7 +176,7 @@ function FrontFirst() {
           </div>
           <div className="educationCollege">ABES Engineering College - Ghaziabad</div>
           <div className="educationDescription">
-            Focused on AI Engineering, Machine Learning, Data Structures, Algorithms and scalable intelligent systems.
+            Focused on AI Engineering, AI Integration, Building scalable AI solutions. Currently working on Ai integration in backend systems and exploring the latest advancements in AI technologies.
           </div>
         </div>
 
